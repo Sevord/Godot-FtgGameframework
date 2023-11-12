@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resource/MainFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resource/Sencebackboard.jpg" type="Texture" id=2]
+[ext_resource path="res://Script/GameMain.gd" type="Script" id=3]
+[ext_resource path="res://Script/Chara/InputToCommand.gd" type="Script" id=4]
+[ext_resource path="res://Prefab/Chara.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Script/Actions/ActionController.gd" type="Script" id=6]
+[ext_resource path="res://Prefab/Enemy.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="GameMain" type="Node"]
+
+[node name="Backboard" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+position = Vector2( -845, -423.071 )
+scale = Vector2( 5.34752, 5.16307 )
+texture = ExtResource( 2 )
+
+[node name="ActGame" type="Node2D" parent="."]
+script = ExtResource( 3 )
+_usingCam = NodePath("../MainCamera")
+_player = NodePath("Chara")
+_enemy = [ NodePath("Enemy1") ]
+_inputText = NodePath("../UI/Label")
+
+[node name="Chara" parent="ActGame" instance=ExtResource( 5 )]
+position = Vector2( -949, -374 )
+_action = NodePath("ActionController")
+_input = NodePath("InputToCommand")
+
+[node name="ActionController" type="Node" parent="ActGame/Chara"]
+script = ExtResource( 6 )
+_Owner = NodePath("..")
+_command = NodePath("../InputToCommand")
+
+[node name="InputToCommand" type="Node" parent="ActGame/Chara"]
+script = ExtResource( 4 )
+controller = true
+
+[node name="Enemy1" parent="ActGame" instance=ExtResource( 7 )]
+position = Vector2( -178, 0 )
+_action = NodePath("ActionController")
+_input = NodePath("InputToCommand")
+
+[node name="ActionController" type="Node" parent="ActGame/Enemy1"]
+script = ExtResource( 6 )
+_Owner = NodePath("..")
+_command = NodePath("../InputToCommand")
+
+[node name="InputToCommand" type="Node" parent="ActGame/Enemy1"]
+script = ExtResource( 4 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+margin_right = 202.0
+margin_bottom = 449.0
+custom_fonts/font = SubResource( 2 )
+text = "
+
+我是你爹 "
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( -870, -326 )
+current = true
+zoom = Vector2( 1.7, 1.7 )
