@@ -19,6 +19,16 @@ export(NodePath) var _anim
 # 所以我们不得不拟合一个，按照每秒作为单位来用deltaTime做拟合
 export(float) var weight:float = 3.5
 
+#血量/槽
+var hp:float
+var mp:float
+
+#Godot的 字段 setget只有在外部引用时候才有用
+var Dead:bool setget setDead,getDead
+func setDead(value):
+	pass
+func getDead():
+	return (hp<=0)
 
 # 是否正在下落
 var _falling:bool = false;
@@ -125,9 +135,12 @@ func initRefer():
 	action.anim = get_node(_anim) #设置动画播放器
 
 func _ready():
+	
+	hp = 100
+	mp = 100
+	
 	#set一下components
 	initRefer()
-	
 	
 	#设置回调
 	action.Set(funcref(self,"onActionChangedCallBack"))
@@ -148,10 +161,14 @@ func onActionChangedCallBack(wasAction:ActionInfo, toAction:ActionInfo):
 
 func _process(delta):
 	#以下内容只有不在硬直才会执行
-	if (!action.Freezing):
+	
+	if (!action.Freezing && hp>0):
 		#HitRecords，处理受击信息
 		for record in HitRecords:
 			record.Update(delta)
+	
+	if (hp<=0):
+		action.anim.play("Dead")
 
 
 # 攻击盒子当前是否激活？

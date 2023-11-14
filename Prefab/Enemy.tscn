@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://Script/Chara/CharacterObj.gd" type="Script" id=1]
 [ext_resource path="res://Resource/Jin Kisaragi/jn201_00.png" type="Texture" id=2]
@@ -125,6 +125,7 @@
 [ext_resource path="res://Resource/Jin Kisaragi/jn071_00.png" type="Texture" id=123]
 [ext_resource path="res://Resource/Jin Kisaragi/jn071_01.png" type="Texture" id=124]
 [ext_resource path="res://Resource/Jin Kisaragi/jn071_04.png" type="Texture" id=125]
+[ext_resource path="res://Resource/Jin Kisaragi/jn060_12.png" type="Texture" id=126]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 80, 20 )
@@ -135,6 +136,7 @@ extents = Vector2( 68, 196 )
 [sub_resource type="Animation" id=15]
 resource_name = "BeatenFromBack"
 length = 0.4
+loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -486,6 +488,59 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 44, 188 ), Vector2( 64, 188 ), Vector2( 64, 188 ), Vector2( 54.6667, 188 ), Vector2( 72, 172 ), Vector2( 76, 148 ), Vector2( 66.6667, 144 ), Vector2( 69.3333, 160 ), Vector2( 72, 184 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Dead"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 126 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 176, 36 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BeHitBox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -26, 180 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 30, 200 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -1176,6 +1231,7 @@ anims/BoxingCharge = SubResource( 18 )
 anims/BoxingForward = SubResource( 4 )
 anims/BoxingStand = SubResource( 1 )
 anims/BoxingTurnBack = SubResource( 10 )
+anims/Dead = SubResource( 19 )
 anims/HurtFromBack = SubResource( 17 )
 anims/HurtFromFront = SubResource( 6 )
 anims/Kick1 = SubResource( 7 )

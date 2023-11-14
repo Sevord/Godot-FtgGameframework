@@ -2,7 +2,8 @@ extends Node
 class_name InputToCommand 
 #将输入翻译成命令
 
-
+export(NodePath) var _Owner
+var Owner
  
 # 保持一个按键的存在时间最多这么多秒，太早的就释放掉了
 const RecordKeepTime:float = 0.5
@@ -39,8 +40,13 @@ var _nonDirectCooldown:float = 0;
 # 其实也不是没有动作游戏采取这种“Turbo输入”的
 # 没有holding和tap，用这种"Turbo输入"的结果就是一些手感会变差，比如移动，还有蓄力，但不是做不了，得凑
 
+func _ready():
+	Owner = get_node(_Owner)
+
 
 func _process(delta):
+	if (Owner.Dead): return
+	
 	var dt:float = delta
 		#开始去掉已经过期的操作记录
 	var index:int = 0
@@ -117,7 +123,6 @@ func _process(delta):
 				AddInput(AutoSomething.KeyMap.NoDirection)
 	#计数器
 	_timeStamp += delta;
-
 
 #添加一个输入
 func AddInput(key):

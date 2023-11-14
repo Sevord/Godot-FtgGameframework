@@ -19,6 +19,15 @@ var enemy:Array
 export(NodePath) var _inputText
 var inputText:Label
 
+#主要角色BarUI
+export(NodePath) var _PlayerBar
+var PlayerBar
+
+#敌人UI，凑效果的
+export(NodePath) var _EnemyBar
+var EnemyBar
+
+
 func _ready():
 	
 	#初始化节点引用
@@ -39,6 +48,8 @@ func initRefer():
 	usingCam = get_node(_usingCam)
 	player = get_node(_player)
 	inputText = get_node(_inputText)
+	PlayerBar = get_node(_PlayerBar)
+	EnemyBar = get_node(_EnemyBar)
 	
 	for ene in _enemy:
 		enemy.append(get_node(ene))
@@ -96,7 +107,10 @@ func DealWithAttacks()->void:
 			var hRec:HitRecord = player.GetHitRecord(ene, result[1].phase);
 			if (hRec == null || (hRec.Cooldown <= 0 && hRec.CanHitTimes > 0)):
 				DoAttack(player, ene, result[1], result[2])
-			
+				
+				#伤害计算与通知UI逻辑
+				EnemyBar.OnDamage(ene.hp,ene.mp)
+				
 		
 		#敌人对玩家 同上，封装的多返回值
 		result = ene.CanAttackTargetNow(player)
@@ -106,6 +120,8 @@ func DealWithAttacks()->void:
 			var hRec:HitRecord = ene.GetHitRecord(player,result[1].phase);
 			if (hRec == null || (hRec.Cooldown <= 0 && hRec.CanHitTimes > 0)):
 				DoAttack(ene, player, result[1] , result[2])
+				
+				PlayerBar.OnDamage(player.hp,player.mp)
 		
 	
 
@@ -178,7 +194,11 @@ func DoAttack(attacker:CharacterObj,defender:CharacterObj,attackInfo:AttackInfo,
 		defender.action.AddTempBeCancelledTagById(cTag);
 	
 	#造成伤害
+	defender.hp -= 100 * attackInfo.attack
 	#todo demo里就先不做了
 	
 	#增加命中记录，确保不连续命中
 	attacker.AddHitRecord(defender, attackInfo.phase);
+
+
+

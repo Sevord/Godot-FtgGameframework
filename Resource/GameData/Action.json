@@ -418,7 +418,17 @@
           "cancelTag": [ "OverHeadAction" ],
           "fadeOutPercentage": 0.05,
           "priority": 0
+        },
+        {
+          "percentageRange": {
+            "min": 0.5,
+            "max": 1
+          },
+          "percentage": 0.1,
+          "cancelTag": [ "OverHeadSwordCombo1" ],
+          "fadeOutPercentage": 0.05
         }
+
       ],
       "tempBeCancelledTag": [],
       "commands": [
@@ -808,7 +818,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.3,
+          "attack": 0.05,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
@@ -820,7 +830,7 @@
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.05,
+          "freeze": 0.1,
           "canHitSameTarget": 1,
           "hitSameTargetDelay": 1,
           "selfActionChange": {
@@ -904,7 +914,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.45,
+          "attack": 0.1,
           "forceDir": 0,
           "pushPower": {
             "说明": [
@@ -922,9 +932,9 @@
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.08,
-          "canHitSameTarget": 1,
-          "hitSameTargetDelay": 1,
+          "freeze": 0.1,
+          "canHitSameTarget": 2,
+          "hitSameTargetDelay": 0.1,
           "selfActionChange": {
             "changeType": 0,
             "param": "",
@@ -975,7 +985,7 @@
     {
       "id": "OverHeadPunch1",
       "animKey": "OverHeadPunch1",
-      "catalog": "Punch",
+      "catalog": "OverHead",
       "cancelTag": [
         {
           "tag": "OverHeadAction",
@@ -983,7 +993,17 @@
           "fadeInPercentage": 0.05
         }
       ],
-      "beCancelledTag": [],
+      "beCancelledTag": [
+        {
+          "percentageRange": {
+            "min": 0.2,
+            "max": 1
+          },
+          "percentage": 0.1,
+          "cancelTag": [ "OverHeadSwordCombo1" ],
+          "fadeOutPercentage": 0.05
+        }
+      ],
       "tempBeCancelledTag": [],
       "commands": [
         {
@@ -1009,21 +1029,21 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.3,
+          "attack": 0.07,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
               "x": 100,
-              "y": 0,
+              "y": -300,
               "z": 0
             },
-            "inSec": 0.12,
+            "inSec": 0.05,
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.05,
-          "canHitSameTarget": 1,
-          "hitSameTargetDelay": 1,
+          "freeze": 0.1,
+          "canHitSameTarget": 2,
+          "hitSameTargetDelay": 0.1,
           "selfActionChange": {
             "changeType": 0,
             "param": "",
@@ -1062,13 +1082,106 @@
       ],
       "rootMotionTween": {
         "method": "GoUpward",
-        "param": [ "300", "1000" ]
+        "param": [ "200", "1200" ]
+      }
+    },
+    {
+      "id": "OverHeadSwordForward",
+      "animKey": "OverHeadSwordForward",
+      "catalog": "Overhead",
+      "cancelTag": [
+        {
+          "tag": "OverHeadSwordCombo1",
+          "startFromPercentage": 0,
+          "fadeInPercentage": 0.05
+        }
+      ],
+      "beCancelledTag": [],
+      "tempBeCancelledTag": [],
+      "commands": [
+        {
+          "keySequence": [ 6, 6, 101 ],
+          "validInSec": 0.05
+        }
+      ],
+      "inputAcceptance": [],
+      "autoNextActionId": "BoxingMoveFalling",
+      "attackPhase": [
+        {
+          "inPercentage": [
+            {
+              "min": 0.5,
+              "max": 0.72
+            }
+          ],
+          "tag": [ "NormalAttack" ],
+          "attackPhase": 0,
+          "priority": 0
+        }
+      ],
+      "attacks": [
+        {
+          "phase": 0,
+          "attack": 0.1,
+          "forceDir": 0,
+          "pushPower": {
+            "moveDistance": {
+              "x": 500,
+              "y": -200,
+              "z": 0
+            },
+            "inSec": 0.2,
+            "tweenMethod": "Slowly"
+          },
+          "hitStun": 0.1,
+          "freeze": 0.1,
+          "canHitSameTarget": 1,
+          "hitSameTargetDelay": 1,
+          "selfActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          },
+          "targetActionChange": {
+            "changeType": 2,
+            "param": "Beaten",
+            "priority": 5
+          },
+          "tempBeCancelledTagTurnOn": []
+        }
+      ],
+      "defensePhase": [
+        {
+          "inPercentage": [
+            {
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "tag": [ "Hurt" ],
+          "priority": 0,
+          "tempBeCancelledTagTurnOn": [],
+          "attackerActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          },
+          "selfActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          }
+        }
+      ],
+      "rootMotionTween": {
+        "method": "GoUpward",
+        "param": [ "0", "1200" ]
       }
     },
     {
       "id": "SquatPunch1",
       "animKey": "SquatPunch1",
-      "catalog": "Punch",
+      "catalog": "Squat",
       "cancelTag": [
         {
           "tag": "SquatAction",
@@ -1077,7 +1190,17 @@
           "priority": 2
         }
       ],
-      "beCancelledTag": [],
+      "beCancelledTag": [
+        {
+          "percentageRange": {
+            "min": 0.5,
+            "max": 1
+          },
+          "percentage": 0.1,
+          "cancelTag": [ "SquatSwordCombo1" ],
+          "fadeOutPercentage": 0.05
+        }
+      ],
       "tempBeCancelledTag": [],
       "commands": [
         {
@@ -1103,7 +1226,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.3,
+          "attack": 0.02,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
@@ -1153,7 +1276,111 @@
             "priority": 0
           }
         }
-      ]
+      ],
+      "rootMotionTween": {
+        "method": "GoStraight",
+        "param": [ "5" ]
+      }
+    },
+    {
+      "id": "SquatSword1",
+      "animKey": "SquatSword1",
+      "catalog": "Suqat",
+      "cancelTag": [
+        {
+          "tag": "SquatAction",
+          "startFromPercentage": 0,
+          "fadeInPercentage": 0.05,
+          "priority": 2
+        },
+        {
+          "tag": "SquatSwordCombo1",
+          "startFromPercentage": 0,
+          "fadeInPercentage": 0.05,
+          "priority": 1
+        }
+      ],
+      "beCancelledTag": [],
+      "tempBeCancelledTag": [],
+      "commands": [
+        {
+          "keySequence": [8,101],
+          "validInSec": 0.05
+        }
+      ],
+      "inputAcceptance": [],
+      "autoNextActionId": "BoxingSquat",
+      "attackPhase": [
+        {
+          "inPercentage": [
+            {
+              "min": 0.26,
+              "max": 0.58
+            }
+          ],
+          "tag": [ "NormalAttack" ],
+          "attackPhase": 0,
+          "priority": 0
+        }
+      ],
+      "attacks": [
+        {
+          "phase": 0,
+          "attack": 0.15,
+          "forceDir": 0,
+          "pushPower": {
+            "moveDistance": {
+              "x": 50,
+              "y": -800,
+              "z": 0
+            },
+            "inSec": 0.3,
+            "tweenMethod": "Slowly"
+          },
+          "hitStun": 0.12,
+          "freeze": 0.05,
+          "canHitSameTarget": 1,
+          "hitSameTargetDelay": 1,
+          "selfActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          },
+          "targetActionChange": {
+            "changeType": 2,
+            "param": "Hurt",
+            "priority": 5
+          },
+          "tempBeCancelledTagTurnOn": [ "PunchCombo1" ]
+        }
+      ],
+      "defensePhase": [
+        {
+          "inPercentage": [
+            {
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "tag": [ "Hurt" ],
+          "priority": 0,
+          "tempBeCancelledTagTurnOn": [],
+          "attackerActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          },
+          "selfActionChange": {
+            "changeType": 0,
+            "param": "",
+            "priority": 0
+          }
+        }
+      ],
+      "rootMotionTween": {
+        "method": "GoStraight",
+        "param": [ "5" ]
+      }
     },
     {
       "id": "Kick1",
@@ -1209,7 +1436,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.3,
+          "attack": 0.05,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
@@ -1221,7 +1448,7 @@
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.05,
+          "freeze": 0.1,
           "canHitSameTarget": 1,
           "hitSameTargetDelay": 1,
           "selfActionChange": {
@@ -1310,7 +1537,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.25,
+          "attack": 0.1,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
@@ -1322,7 +1549,7 @@
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.05,
+          "freeze": 0.1,
           "canHitSameTarget": 1,
           "hitSameTargetDelay": 1,
           "selfActionChange": {
@@ -1394,7 +1621,7 @@
       "attacks": [
         {
           "phase": 0,
-          "attack": 0.6,
+          "attack": 0.17,
           "forceDir": 0,
           "pushPower": {
             "moveDistance": {
@@ -1406,7 +1633,7 @@
             "tweenMethod": "Slowly"
           },
           "hitStun": 0.12,
-          "freeze": 0.05,
+          "freeze": 0.1,
           "canHitSameTarget": 1,
           "hitSameTargetDelay": 1,
           "selfActionChange": {

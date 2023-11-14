@@ -1,4 +1,4 @@
-[gd_scene load_steps=202 format=2]
+[gd_scene load_steps=251 format=2]
 
 [ext_resource path="res://Script/Chara/CharacterObj.gd" type="Script" id=1]
 [ext_resource path="res://Resource/Jin Kisaragi/jn201_00.png" type="Texture" id=2]
@@ -178,6 +178,51 @@
 [ext_resource path="res://Resource/Jin Kisaragi/jn231_08.png" type="Texture" id=176]
 [ext_resource path="res://Resource/Jin Kisaragi/jn231_06.png" type="Texture" id=177]
 [ext_resource path="res://Resource/Jin Kisaragi/jn231_05.png" type="Texture" id=178]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_01.png" type="Texture" id=179]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_05.png" type="Texture" id=180]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_07.png" type="Texture" id=181]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_08.png" type="Texture" id=182]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_10.png" type="Texture" id=183]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_11.png" type="Texture" id=184]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_02.png" type="Texture" id=185]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_03.png" type="Texture" id=186]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_00.png" type="Texture" id=187]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_06.png" type="Texture" id=188]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_09.png" type="Texture" id=189]
+[ext_resource path="res://Resource/Jin Kisaragi/jn409_04.png" type="Texture" id=190]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_00.png" type="Texture" id=191]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_06.png" type="Texture" id=192]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_02.png" type="Texture" id=193]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_08.png" type="Texture" id=194]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_11.png" type="Texture" id=195]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_10.png" type="Texture" id=196]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_17.png" type="Texture" id=197]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_14.png" type="Texture" id=198]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_01.png" type="Texture" id=199]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_13.png" type="Texture" id=200]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_05.png" type="Texture" id=201]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_15.png" type="Texture" id=202]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_03.png" type="Texture" id=203]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_04.png" type="Texture" id=204]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_12.png" type="Texture" id=205]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_07.png" type="Texture" id=206]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_16.png" type="Texture" id=207]
+[ext_resource path="res://Resource/Jin Kisaragi/jn232_09.png" type="Texture" id=208]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_12.png" type="Texture" id=209]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_11.png" type="Texture" id=210]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_03.png" type="Texture" id=211]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_02.png" type="Texture" id=212]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_00.png" type="Texture" id=213]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_08.png" type="Texture" id=214]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_06.png" type="Texture" id=215]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_13.png" type="Texture" id=216]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_01.png" type="Texture" id=217]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_04.png" type="Texture" id=218]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_09.png" type="Texture" id=219]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_10.png" type="Texture" id=220]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_05.png" type="Texture" id=221]
+[ext_resource path="res://Resource/Jin Kisaragi/jn252_07.png" type="Texture" id=222]
+[ext_resource path="res://Resource/Jin Kisaragi/jn060_12.png" type="Texture" id=223]
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 80, 20 )
@@ -713,6 +758,46 @@ tracks/3/keys = {
 "values": [ Vector2( 44, 188 ), Vector2( 64, 188 ), Vector2( 64, 188 ), Vector2( 54.6667, 188 ), Vector2( 72, 172 ), Vector2( 76, 148 ), Vector2( 66.6667, 144 ), Vector2( 69.3333, 160 ), Vector2( 72, 184 ) ]
 }
 
+[sub_resource type="Animation" id=28]
+resource_name = "Dead"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 223 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 144.667, 44 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BeHitBox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 64, 200 ) ]
+}
+
 [sub_resource type="Animation" id=17]
 resource_name = "HurtFromBack"
 length = 0.4
@@ -947,6 +1032,184 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( -138, -145.625 ), Vector2( -209, 84.8125 ), Vector2( -96, 180.707 ), Vector2( -10.625, 156 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "OverHeadSwordDown"
+length = 0.9
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 213 ), ExtResource( 217 ), ExtResource( 212 ), ExtResource( 211 ), ExtResource( 218 ), ExtResource( 221 ), ExtResource( 215 ), ExtResource( 222 ), ExtResource( 214 ), ExtResource( 219 ), ExtResource( 220 ), ExtResource( 210 ), ExtResource( 209 ), ExtResource( 216 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 119 ), Vector2( -15, 66 ), Vector2( -14.118, 67 ), Vector2( -13.236, 70 ), Vector2( -11.471, -20 ), Vector2( -9.706, 17 ), Vector2( -7.941, 43 ), Vector2( -20, 27 ), Vector2( -70, 41 ), Vector2( 0, 85 ), Vector2( -2.647, 96 ), Vector2( -1.765, 115 ), Vector2( 30, 112 ), Vector2( 0, 111 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25, 0.45, 0.55, 0.65, 0.7, 0.75, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 52.25, 104 ), Vector2( 52.25, 104 ), Vector2( 52.25, 104 ), Vector2( 52.25, 104 ), Vector2( 52.25, 104 ), Vector2( 52.25, 104 ), Vector2( 46.125, 104 ), Vector2( 47.6563, 104 ), Vector2( 49.1875, 104 ), Vector2( 52.25, 104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BeHitBox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.25, 0.45, 0.55, 0.65, 0.7, 0.75, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -10, 120 ), Vector2( -8, 72 ), Vector2( 0, 24 ), Vector2( -8, 24 ), Vector2( 16, 24 ), Vector2( 0, 24 ), Vector2( -6.125, 40 ), Vector2( 16, 72 ), Vector2( -8, 96 ), Vector2( -10, 120 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackHitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.15, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AttackHitBox/CollisionShape2D:shape:extents")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.15, 0.25, 0.3, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64, 66 ), Vector2( 55, 100 ), Vector2( 55.5625, 97.875 ), Vector2( 18.0312, 59.9708 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AttackHitBox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15, 0.25, 0.3, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -88, 254 ), Vector2( 41, -228 ), Vector2( 32, -224 ), Vector2( -18.0312, -148.029 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "OverHeadSwordForward"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 187 ), ExtResource( 179 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 190 ), ExtResource( 180 ), ExtResource( 188 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 189 ), ExtResource( 183 ), ExtResource( 184 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 15, 60 ), Vector2( 15, 80 ), Vector2( 15, 95 ), Vector2( 15, 78 ), Vector2( 15, 87 ), Vector2( 5, 102 ), Vector2( -110, 55 ), Vector2( -105, 75 ), Vector2( -70, 75 ), Vector2( -10, 60 ), Vector2( -20, 38 ), Vector2( -15, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.35, 0.45, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 70, 92 ), Vector2( 70, 92 ), Vector2( 51, 86 ), Vector2( 48.5714, 106.857 ), Vector2( 52.8571, 103.886 ), Vector2( 48, 104 ), Vector2( 47, 90 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BeHitBox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.35, 0.45, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -54, 68 ), Vector2( -32, 72 ), Vector2( -11, 82 ), Vector2( -15.4286, 58.8571 ), Vector2( 8, 32 ), Vector2( 8, 40 ), Vector2( -7, 70 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackHitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.35, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AttackHitBox/CollisionShape2D:shape:extents")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.35, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 121.313, 22 ), Vector2( 72.6563, 24 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AttackHitBox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.35, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -297.313, 54 ), Vector2( -247.344, 24 ) ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -1356,7 +1619,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.15, 0.2, 0.25, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, 120 ), Vector2( 0, 121 ), Vector2( 0, 78 ), Vector2( 0, 58 ), Vector2( 0, 112 ), Vector2( -20, 111 ), Vector2( -20, 120 ), Vector2( 0, 109 ), Vector2( 0, 97 ), Vector2( 10, 123 ), Vector2( 20, 102 ), Vector2( 20, 122 ), Vector2( 20, 112 ) ]
+"values": [ Vector2( 0, 120 ), Vector2( 0, 121 ), Vector2( 0, 78 ), Vector2( 0, 58 ), Vector2( -20, 112 ), Vector2( -50, 111 ), Vector2( -35, 120 ), Vector2( -15, 109 ), Vector2( -5, 97 ), Vector2( 25, 123 ), Vector2( 30, 102 ), Vector2( 45, 122 ), Vector2( 25, 112 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
@@ -1417,6 +1680,95 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( -160, 128 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "SquatSword1"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.35, 0.39, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.66, 0.69, 0.72, 0.74 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 191 ), ExtResource( 199 ), ExtResource( 193 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 201 ), ExtResource( 192 ), ExtResource( 206 ), ExtResource( 194 ), ExtResource( 208 ), ExtResource( 196 ), ExtResource( 195 ), ExtResource( 205 ), ExtResource( 200 ), ExtResource( 198 ), ExtResource( 202 ), ExtResource( 207 ), ExtResource( 197 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.35, 0.39, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.66, 0.69, 0.72, 0.74 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -10, 119 ), Vector2( -10, 51 ), Vector2( -30, 41 ), Vector2( -5, 30 ), Vector2( -20, 32 ), Vector2( -19.375, 33 ), Vector2( -18.75, 2 ), Vector2( 35, -102 ), Vector2( 5, -84 ), Vector2( 2.5, 26 ), Vector2( 1.25, 11 ), Vector2( -30, 21 ), Vector2( 10, 21 ), Vector2( 60, 43 ), Vector2( 0, 25 ), Vector2( 0, 74 ), Vector2( 10, 108 ), Vector2( 25, 105 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BeHitBox/CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.2, 0.25, 0.35, 0.49, 0.52, 0.6, 0.74 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 58, 108 ), Vector2( 58, 130 ), Vector2( 49, 150 ), Vector2( 49.9, 145.8 ), Vector2( 50.98, 126.38 ), Vector2( 38.75, 151.891 ), Vector2( 39.905, 157.258 ), Vector2( 51.195, 156 ), Vector2( 58, 120 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BeHitBox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.2, 0.25, 0.49, 0.52, 0.6, 0.74 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -8, 112 ), Vector2( -8, 90 ), Vector2( -17, 70 ), Vector2( 8, 80 ), Vector2( -6.75, 47.891 ), Vector2( -7.905, 37.2576 ), Vector2( -3.195, 76 ), Vector2( -3.195, 96 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AttackHitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AttackHitBox/CollisionShape2D:shape:extents")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.2, 0.25, 0.36, 0.4, 0.44 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 48, 158.75 ), Vector2( 64, 180 ), Vector2( 72, 212 ), Vector2( 36, 152.195 ), Vector2( 31.7818, 163.779 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AttackHitBox/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2, 0.25, 0.36, 0.4, 0.44 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -120, 33.25 ), Vector2( -136, 12 ), Vector2( -144, -20 ), Vector2( -4, -288 ), Vector2( -8.21818, -276.221 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1647,15 +1999,19 @@ anims/BoxingJump = SubResource( 19 )
 anims/BoxingSquat = SubResource( 21 )
 anims/BoxingStand = SubResource( 1 )
 anims/BoxingTurnBack = SubResource( 10 )
+anims/Dead = SubResource( 28 )
 anims/HurtFromBack = SubResource( 17 )
 anims/HurtFromFront = SubResource( 6 )
 anims/Kick1 = SubResource( 7 )
 anims/OverHeadPunch1 = SubResource( 22 )
+anims/OverHeadSwordDown = SubResource( 25 )
+anims/OverHeadSwordForward = SubResource( 26 )
 anims/OverheadMoveForward = SubResource( 23 )
 anims/Punch1 = SubResource( 8 )
 anims/Punch2 = SubResource( 9 )
 anims/RESET = SubResource( 2 )
 anims/SquatPunch1 = SubResource( 24 )
+anims/SquatSword1 = SubResource( 27 )
 anims/TwinKick = SubResource( 11 )
 anims/TwinKick2 = SubResource( 12 )
 

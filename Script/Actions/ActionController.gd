@@ -102,13 +102,13 @@ func initRefer():
 # 但是无奈，毕竟用了unity
 
 func _process(delta):
+	
+	if (Owner.Dead):return
 	#没有动画就不会工作
 	if (AllActions.size() <= 0):return
 	
-	
-
 	#根据硬直来调整倍率
-	if (Freezing):anim.playback_speed = 0
+	if (_freezing > 0):anim.playback_speed = 0
 	else: anim.playback_speed = 1
 	
 	if (_freezing > 0):_freezing -= delta;
