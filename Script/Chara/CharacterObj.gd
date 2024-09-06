@@ -326,8 +326,8 @@ func AddHitRecord(target:CharacterObj,attackPhase:int)->void:
 	else:
 		rec.Cooldown = action.CurrentAction.attacks[idx].hitSameTargetDelay
 		rec.CanHitTimes -= 1;
-	
-	
+
+
 # 找出关于目标的HitRecord，如果没有就是null
 # <param name="target">谁被命中</param>
 # <param name="phase">算是第几阶段的攻击命中的</param>

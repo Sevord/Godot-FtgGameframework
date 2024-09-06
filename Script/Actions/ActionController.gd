@@ -102,7 +102,6 @@ func initRefer():
 # 但是无奈，毕竟用了unity
 
 func _process(delta):
-	
 	if (Owner.Dead):return
 	#没有动画就不会工作
 	if (AllActions.size() <= 0):return
